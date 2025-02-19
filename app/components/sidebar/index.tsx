@@ -33,6 +33,7 @@ const Sidebar: FC<ISidebarProps> = ({
   return (
     <div
       className="shrink-0 flex flex-col overflow-y-auto bg-white pc:w-[244px] tablet:w-[192px] mobile:w-[240px]  border-r border-gray-200 tablet:h-[calc(100vh_-_3rem)] mobile:h-screen"
+      style={{ backgroundColor: '#212327' }}
     >
       {list.length < MAX_CONVERSATION_LENTH && (
         <div className="flex flex-shrink-0 p-4 !pb-0">
@@ -44,7 +45,7 @@ const Sidebar: FC<ISidebarProps> = ({
         </div>
       )}
 
-      <nav className="mt-4 flex-1 space-y-1 bg-white p-4 !pt-0">
+      <nav className="mt-4 flex-1 space-y-1 bg-white p-4 !pt-0" style={{ backgroundColor: '#212327' }}>
         {list.map((item) => {
           const isCurrent = item.id === currentId
           const ItemIcon
@@ -53,9 +54,10 @@ const Sidebar: FC<ISidebarProps> = ({
             <div
               onClick={() => onCurrentIdChange(item.id)}
               key={item.id}
+              style={{ color: '#fff', backgroundColor: isCurrent ? '#494949' : '' }}
               className={classNames(
                 isCurrent
-                  ? 'bg-primary-50 text-primary-600'
+                  ? ' text-primary-600'
                   : 'text-gray-700 hover:bg-gray-100 hover:text-gray-700',
                 'group flex items-center rounded-md px-2 py-2 text-sm font-medium cursor-pointer',
               )}

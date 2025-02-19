@@ -32,6 +32,7 @@ const Button: FC<IButtonProps> = ({
   return (
     <div
       className={`flex justify-center items-center content-center h-9 leading-5 rounded-lg px-4 py-2 text-base ${style} ${className && className}`}
+      style={{ backgroundColor: '#4d6bfe', border: 'none', width: '8rem', color: '#fff' }}
       onClick={disabled ? undefined : onClick}
     >
       {children}
